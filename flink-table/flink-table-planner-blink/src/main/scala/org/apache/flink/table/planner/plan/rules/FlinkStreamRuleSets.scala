@@ -290,7 +290,6 @@ object FlinkStreamRuleSets {
   private val LOGICAL_CONVERTERS: RuleSet = RuleSets.ofList(
     // translate to flink logical rel nodes
     FlinkLogicalAggregate.STREAM_CONVERTER,
-    FlinkLogicalTableAggregate.CONVERTER,
     FlinkLogicalOverAggregate.CONVERTER,
     FlinkLogicalCalc.CONVERTER,
     FlinkLogicalCorrelate.CONVERTER,
@@ -305,7 +304,6 @@ object FlinkStreamRuleSets {
     FlinkLogicalExpand.CONVERTER,
     FlinkLogicalWatermarkAssigner.CONVERTER,
     FlinkLogicalWindowAggregate.CONVERTER,
-    FlinkLogicalWindowTableAggregate.CONVERTER,
     FlinkLogicalSnapshot.CONVERTER,
     FlinkLogicalMatch.CONVERTER,
     FlinkLogicalSink.CONVERTER
@@ -367,12 +365,10 @@ object FlinkStreamRuleSets {
     StreamExecExpandRule.INSTANCE,
     // group agg
     StreamExecGroupAggregateRule.INSTANCE,
-    StreamExecGroupTableAggregateRule.INSTANCE,
     // over agg
     StreamExecOverAggregateRule.INSTANCE,
     // window agg
     StreamExecGroupWindowAggregateRule.INSTANCE,
-    StreamExecGroupWindowTableAggregateRule.INSTANCE,
     // join
     StreamExecJoinRule.INSTANCE,
     StreamExecWindowJoinRule.INSTANCE,
